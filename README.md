@@ -13,3 +13,14 @@ O YOLOv8 é a versão mais recente da série de modelos YOLO (You Only Look Once
 
 Em resumo, o YOLOv8 continua a tradição de seus antecessores, oferecendo um modelo rápido e preciso, mas com melhorias substanciais em desempenho e versatilidade para diferentes aplicações de visão computacional.
 
+# Detecção e segmentação
+
+!pip install ultralytics 
+from ultralytics import YOLO  
+
+#!yolo task=detect mode=predict model=yolov8n.pt  source="/content/robo.jpeg" save=True imgsz=320 conf=0.5
+
+!yolo task=segment mode=predict model=/content/yolov8n-seg.pt  source="/content/pessoas.jpg" save=True imgsz=320 conf=0.5
+
+from IPython.display import Image
+Image('/content/runs/segment/predict2/pessoas.jpg')
